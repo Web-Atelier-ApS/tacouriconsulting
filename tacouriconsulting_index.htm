@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tacouri Consulting | Expert Tax Consultation & Compliance</title>
+    <meta name="description" content="Over 30 years of experience in taxation. We handle tax compliance, MRA audits, VAT registration, and income tax returns so you can focus on growing your business.">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Tacouri Consulting",
+      "description": "Over 30 years experience on taxation. Comply, Grow, Prosper. We take care of your taxes while you run your business.",
+      "telephone": "+23057687019",
+      "email": "nund@tacouriconsulting.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "MU"
+      },
+      "url": "https://www.tacouriconsulting.com",
+      "knowsAbout": [
+        "Taxation",
+        "Tax Compliance",
+        "MRA Audits",
+        "VAT Registration",
+        "Income Tax Returns"
+      ]
+    }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-primary: #0a0d14;
+            --bg-secondary: #111622;
+            --bg-accent: #171f30;
+            --text-primary: #f3f4f6;
+            --text-secondary: #9ca3af;
+            --accent: #d4af37; /* Modern Gold */
+            --accent-muted: rgba(212, 175, 55, 0.15);
+            --accent-glow: rgba(212, 175, 55, 0.4);
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        /* Subtle Grid Background Grid */
+        .grid-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 80px 80px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Header / Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(10, 13, 20, 0.7);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            padding: 1rem 2rem;
+            background: rgba(10, 13, 20, 0.9);
+        }
+
+        .logo-placeholder {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+        }
+
+        .logo-icon {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--accent);
+            transform: rotate(45deg);
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        /* CTA Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.8rem 1.8rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--bg-primary);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px var(--accent-muted);
+        }
+
+        .btn-outline {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--text-primary);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-muted);
+        }
+
+        /* Layout Containers */
+        section {
+            position: relative;
+            padding: 8rem 2rem 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            z-index: 2;
+        }
+
+        /* Hero Section */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-top: 4rem;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            background: var(--accent-muted);
+            color: var(--accent);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            width: fit-content;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            max-width: 900px;
+        }
+
+        .hero-title span {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .hero-tagline {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-bottom: 3rem;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* Philosophy / Context Section */
+        .section-header {
+            margin-bottom: 4rem;
+            max-width: 700px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .philosophy-card {
+            background: var(--bg-secondary);
+            border: 1px solid rgba(255,255,255,0.03);
+            padding: 3rem 2rem;
+            border-radius: 8px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .philosophy-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition);
+        }
+
+        .philosophy-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255,255,255,0.08);
+            background: var(--bg-accent);
+        }
+
+        .philosophy-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .philosophy-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .philosophy-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Services Grid Style */
+        .services-container {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 4rem 3rem;
+            border: 1px solid rgba(255,255,255,0.02);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-item {
+            padding: 1.5rem;
+            border-left: 2px solid rgba(255,255,255,0.1);
+            transition: var(--transition);
+        }
+
+        .service-item:hover {
+            border-left-color: var(--accent);
+            padding-left: 2rem;
+        }
+
+        .service-item h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .service-item p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Sticky Info Section */
+        .contact-panel {
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-accent) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            border-radius: 12px;
+            padding: 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .contact-info-block h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-details a {
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .contact-details a:hover {
+            color: var(--accent);
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 3rem 2rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Scroll Animation Utilities */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem;
+            }
+            nav {
+                display: none; /* Keep it clean for true minimalism or handle simply via scrolling layout */
+            }
+            section {
+                padding: 6rem 1.5rem 4rem 1.5rem;
+            }
+            .contact-panel {
+                padding: 2.5rem 1.5rem;
+            }
+            .services-container {
+                padding: 2.5rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grid-overlay"></div>
+
+    <!-- Header Navigation -->
+    <header id="main-header">
+        <div class="logo-placeholder">
+            <div class="logo-icon"></div>
+            <span>Tacouri Consulting</span>
+        </div>
+        <nav>
+            <a href="#about">The Challenge</a>
+            <a href="#services">Services</a>
+            <a href="#contact" class="btn btn-outline">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        
+        <!-- Hero Section -->
+        <section id="hero">
+            <div class="hero-badge">Over 30 Years of Taxation Experience</div>
+            <h1 class="hero-title">Do your business and let us take care of your <span>taxes.</span></h1>
+            <p class="hero-tagline">Tax laws change frequently, and ignorance of these changes can result in severe financial leakage or damaging compliance liabilities.</p>
+            <div class="hero-ctas">
+                <a href="mailto:nund@tacouriconsulting.com" class="btn btn-primary">Comply, Grow, Prosper</a>
+                <a href="#about" class="btn btn-outline">Learn the Risks</a>
+            </div>
+        </section>
+
+        <!-- Reality Check / About Section -->
+        <section id="about" class="reveal">
+            <div class="section-header">
+                <h2>The Cost of Non-Compliance</h2>
+                <p>Whatever the size of a business, maintaining bulletproof tax posture remains foundational to long-term profitability.</p>
+            </div>
+
+            <div class="philosophy-grid">
+                <div class="philosophy-card">
+                    <h3>Under & Over Payment</h3>
+                    <p>If you overpay your taxes, you lose money that's rightfully yours. Conversely, regular operational oversight can hide systemic underpayments that compound rapidly over time.</p>
+                </div>
+                <div class="philosophy-card">
+                    <h3>MRA Audit Exposures</h3>
+                    <p>Any incorrect declaration may be subject to a strict audit by the MRA, inevitably resulting in disruptive adjustments, resource-draining assessments, and structured penalties.</p>
+                </div>
+                <div class="philosophy-card">
+                    <h3>Strategic Protection</h3>
+                    <p>The cost of non-compliance can be devastating for operations. We deploy deeply seasoned insights to guard corporate resources and insulate your balance sheets.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Services Section -->
+        <section id="services" class="reveal">
+            <div class="services-container">
+                <div class="section-header">
+                    <h2>Scope of Expertise</h2>
+                    <p>Comprehensive regulatory protection from core maintenance tasks to strategic appellate representations.</p>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-item">
+                        <h4>MRA Representation & Review</h4>
+                        <p>Preparing complex statements of facts for clear objections regarding assessments issued by the MRA. Dedicated representation at the Assessment Review Committee.</p>
+                    </div>
+                    <div class="service-item">
+                        <h4>SME Incentives Optimization</h4>
+                        <p>Strategic structural mapping of tax benefits explicitly available to SMEs, capturing all allowable deductions and maximizing capital allowances perfectly.</p>
+                    </div>
+                    <div class="service-item">
+                        <h4>VAT Lifecycle Management</h4>
+                        <p>Navigating VAT Registration parameters smoothly, managing structured VAT refunds/repayments, and executing clean submissions of recurring VAT returns.</p>
+                    </div>
+                    <div class="service-item">
+                        <h4>Comprehensive Submissions</h4>
+                        <p>Accurate lifecycle management for Income Tax returns, covering APS, CPS, PAYE/CSG/NSF frameworks alongside complete Annual returns.</p>
+                    </div>
+                    <div class="service-item">
+                        <h4>Statutory Bookkeeping</h4>
+                        <p>Implementation and preservation of proper books, transactional accounting trails, and corporate records strictly curated as per changing tax legislations.</p>
+                    </div>
+                    <div class="service-item">
+                        <h4>Personal Income Tax</h4>
+                        <p>Bespoke planning, optimization, and structuring mechanisms for high-earning individuals and localized entrepreneurial operations alike.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final Conversion / Contact Section -->
+        <section id="contact" class="reveal">
+            <div class="contact-panel">
+                <div class="contact-info-block">
+                    <h3>Secure Your Stance</h3>
+                    <div class="contact-details">
+                        <p>Direct Line: <a href="tel:+23057687019">+230 5768 7019</a></p>
+                        <p>Inquiries: <a href="mailto:nund@tacouriconsulting.com">nund@tacouriconsulting.com</a></p>
+                    </div>
+                </div>
+                <div>
+                    <a href="mailto:nund@tacouriconsulting.com" class="btn btn-primary" style="padding: 1.2rem 2.5rem; font-size: 1rem;">Initiate Consult</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Tacouri Consulting. Crafted to be ultra-lightweight and tracking-free.</p>
+    </footer>
+
+    <!-- Vanilla Transitions Script -->
+    <script>
+        // Header scroll behavior
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Intersection Observer for scroll-triggered revealing
+        const revealElements = document.querySelectorAll('.reveal');
+        const observerOptions = {
+            root: null,
+            threshold: 0.12,
+            rootMargin: '0px 0px -40px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target); // Reveal once
+                }
+            });
+        }, observerOptions);
+
+        revealElements.forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>
